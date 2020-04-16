@@ -40,7 +40,6 @@ before_install:
   - export rver=`r_version`; echo $rver ;
   - x=`export_clang_cxx`; eval ${x}
   - if [ "$TRAVIS_OS_NAME" = "osx" ]; then no_open_mp ; brew install -v freetype ; fi
-  - freesurfer_install || true ;
   - fsl_install || true ;
   - dcmtk_install || true ;
   - gsl_install 2.1 || true ;
