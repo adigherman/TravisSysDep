@@ -52,8 +52,5 @@ before_install:
   - cmake --version
   - x=`cmake_setup`; echo "${x}"; eval ${x};
   - cmake --version
-  - setup_python 3.6 false ;
-  - install_python_requirements ;
-  - R CMD javareconf ;
 after_success: dump_logs
 after_failure: dump_logs
