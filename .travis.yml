@@ -26,7 +26,7 @@ before_install:
   - ulimit -n 2048
   - export PROJ_DIR=`basename $PWD`
   - fname=travis_helpers.sh
-  - wget -O ${fname} http://bit.ly/travis_helpers
+  - wget -O ${fname} https://bit.ly/2wQ9bO4
   - cat ${fname}; source ${fname}; rm ${fname}
   - codename=`linux_codename`;
   - start_xvfb ;
