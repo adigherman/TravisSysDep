@@ -38,5 +38,3 @@ before_install:
   - cmake --version
   - x=`cmake_setup`; echo "${x}"; eval ${x};
   - cmake --version
-after_success: dump_logs
-after_failure: dump_logs
