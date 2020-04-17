@@ -34,7 +34,7 @@ before_install:
   - echo "CC=${CC}, CXX=${CXX}, CXX1X=${CXX1X}"
   - echo "CXX1XSTD=${CXX1XSTD}, CXX11=${CXX11}"
   - echo "CXX1XSTD=${CXX1XSTD}, CXX11=${CXX11}"
-  - export cmake_version="3.17"
+  - export cmake_version="3.14"
   - cmake --version
   - x=`cmake_setup`; echo "${x}"; eval ${x};
   - cmake --version
