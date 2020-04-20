@@ -39,7 +39,6 @@ before_install:
 - x=`cmake_setup`; echo "${x}"; eval ${x};
 - cmake --version
 - ls -lt /usr/local
-before_deploy:
 - eval "$(ssh-agent -s)"
 - chmod 600 ./travis_rsa
 - echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
