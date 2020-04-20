@@ -1,6 +1,7 @@
 language: minimal
 dist: xenial
 addons:
+  ssh_known_hosts: neuroconductor.org
   apt:
     packages:
     - libcurl4-openssl-dev
@@ -43,5 +44,5 @@ before_install:
 - chmod 600 ./travis_rsa
 - echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - ssh-add ./travis_rsa
-- ssh -i ./travis_rsa igmadmin@162.129.222.10 pwd
+- ssh -i ./travis_rsa igmadmin@neuroconductor pwd
 
