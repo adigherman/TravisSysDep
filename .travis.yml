@@ -44,5 +44,5 @@ before_install:
 - chmod 600 ./travis_rsa
 - echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - ssh-add ./travis_rsa
-- ssh -i ./travis_rsa igmadmin@neuroconductor pwd
+- ssh -i ./travis_rsa igmadmin@neuroconductor.org pwd
 
