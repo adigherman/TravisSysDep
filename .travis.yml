@@ -43,7 +43,5 @@ before_install:
 - chmod 600 /tmp/travis_rsa
 - echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - ssh-add /tmp/travis_rsa
-#- tar -zcf /var/tmp/fsl-${TRAVIS_OS_NAME}.tar.gz /usr/local/fsl
-#- scp -v /var/tmp/fsl-${TRAVIS_OS_NAME}.tar.gz igmadmin@162.129.222.10:/var/www/html/sites/default/files/sysdeps
-- tar -zcf /var/tmp/cmake-$TRAVIS_OS_NAME.tar.gz /usr/local/cmake-3.12.4
-- scp -v /var/tmp/cmake-$TRAVIS_OS_NAME.tar.gz igmadmin@162.129.222.10:/var/www/html/sites/default/files/sysdeps
+- tar -zcf /var/tmp/fsl-$TRAVIS_OS_NAME.tar.gz /usr/local/fsl
+- scp -v /var/tmp/fsl-$TRAVIS_OS_NAME.tar.gz igmadmin@162.129.222.10:/var/www/html/sites/default/files/sysdeps
