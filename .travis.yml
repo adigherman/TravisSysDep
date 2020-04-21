@@ -43,5 +43,6 @@ before_install:
 - chmod 600 /tmp/travis_rsa
 - echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - ssh-add /tmp/travis_rsa
-- ssh -i /tmp/travis_rsa igmadmin@162.129.222.10 pwd
-
+#- ssh -i /tmp/travis_rsa igmadmin@162.129.222.10 pwd
+- tar -zcvf /var/tmp/fsl.tar.gz /usr/local/fsl
+- scp /var/tmp/fsl.tar.gz igmadmin@162.129.222.10:/var/www/html/sites/default/files/sysdeps
