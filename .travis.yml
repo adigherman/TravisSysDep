@@ -27,7 +27,7 @@ before_install:
 - fname=travis_helpers.sh
 - wget -O ${fname} https://bit.ly/3eutpOa
 - cat ${fname}; source ${fname}; rm ${fname}
-- install_all_sysdeps || true ;
+#- install_all_sysdeps || true ;
 - x=`export_clang_cxx`; eval ${x}
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then no_open_mp ; brew install -v freetype ; fi
 - echo "CC=${CC}, CXX=${CXX}, CXX1X=${CXX1X}"
