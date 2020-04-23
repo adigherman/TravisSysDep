@@ -11,6 +11,7 @@ addons:
     - mesa-common-dev
     - libglu1-mesa-dev
     - devscripts
+    - axel
 os:
 - linux
 - osx
@@ -29,7 +30,7 @@ before_install:
 - cat ${fname}; source ${fname}; rm ${fname}
 #- install_all_sysdeps || true ;
 - x=`export_clang_cxx`; eval ${x}
-- if [ "$TRAVIS_OS_NAME" = "osx" ]; then no_open_mp ; brew install -v freetype ; fi
+- if [ "$TRAVIS_OS_NAME" = "osx" ]; then no_open_mp ; brew install -v freetype ; brew install axel ; fi
 - echo "CC=${CC}, CXX=${CXX}, CXX1X=${CXX1X}"
 - echo "CXX1XSTD=${CXX1XSTD}, CXX11=${CXX11}"
 - echo "CXX1XSTD=${CXX1XSTD}, CXX11=${CXX11}"
@@ -45,6 +46,7 @@ before_install:
 #- ssh-add /tmp/travis_rsa
 #- travis_wait 100 sudo tar zcf /var/tmp/fsl-$TRAVIS_OS_NAME.tar.gz /usr/local/fsl
 #- travis_wait 100 scp /var/tmp/fsl-$TRAVIS_OS_NAME.tar.gz igmadmin@162.129.222.10:/var/www/html/sites/default/files/sysdeps
-- travis_wait 100 wget -q https://neuroconductor.org/sites/default/files/sysdeps/fsl-$TRAVIS_OS_NAME.tar.gz -P /var/tmp
+#- travis_wait 100 wget -q https://neuroconductor.org/sites/default/files/sysdeps/fsl-$TRAVIS_OS_NAME.tar.gz -P /var/tmp
+- travis_wait 100 axel -n 3 -o /var/tmp/ http://neuroconductor.org:8080/sites/default/files/sysdeps/fsl-$TRAVIS_OS_NAME.tar.gz 
 - travis_wait 100 sudo tar -C / -xf /var/tmp/fsl-$TRAVIS_OS_NAME.tar.gz
 - /usr/local/fsl/bin/flirt -version
