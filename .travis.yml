@@ -47,6 +47,6 @@ before_install:
 #- travis_wait 100 sudo tar zcf /var/tmp/fsl-$TRAVIS_OS_NAME.tar.gz /usr/local/fsl
 #- travis_wait 100 scp /var/tmp/fsl-$TRAVIS_OS_NAME.tar.gz igmadmin@162.129.222.10:/var/www/html/sites/default/files/sysdeps
 #- travis_wait 100 wget -q https://neuroconductor.org/sites/default/files/sysdeps/fsl-$TRAVIS_OS_NAME.tar.gz -P /var/tmp
-- travis_wait 100 axel -n 3 -o /var/tmp/ http://neuroconductor.org:8080/sites/default/files/sysdeps/fsl-$TRAVIS_OS_NAME.tar.gz 
+- travis_wait 100 axel -q -n 3 -o /var/tmp/ http://neuroconductor.org:8080/sites/default/files/sysdeps/fsl-$TRAVIS_OS_NAME.tar.gz 
 - travis_wait 100 sudo tar -C / -xf /var/tmp/fsl-$TRAVIS_OS_NAME.tar.gz
 - /usr/local/fsl/bin/flirt -version
