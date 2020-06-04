@@ -48,6 +48,6 @@ before_install:
 #- travis_wait 100 scp /var/tmp/fsl-$TRAVIS_OS_NAME.tar.gz igmadmin@162.129.222.10:/var/www/html/sites/default/files/sysdeps
 #- travis_wait 100 wget -q https://neuroconductor.org/sites/default/files/sysdeps/fsl-$TRAVIS_OS_NAME.tar.gz -P /var/tmp
 #- travis_wait 100 axel -q -n 3 -o /var/tmp/ http://neuroconductor.org:8080/sites/default/files/sysdeps/fsl-$TRAVIS_OS_NAME.tar.gz 
-- travis_wait 100 axel -q -n 3 -o /var/tmp/ https://drive.google.com/uc?export=download&id=1kTjye8VBueC6hvg2cCl3hjcTrCyI2Q_I
+wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1kTjye8VBueC6hvg2cCl3hjcTrCyI2Q_I' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1kTjye8VBueC6hvg2cCl3hjcTrCyI2Q_I" -O fsl-linux.tar.gz && rm -rf /tmp/cookies.txt
 - travis_wait 100 sudo tar -C / -xf /var/tmp/fsl-$TRAVIS_OS_NAME.tar.gz
 - /usr/local/fsl/bin/flirt -version
